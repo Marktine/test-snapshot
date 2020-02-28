@@ -5,8 +5,8 @@ const Example = (props) => {
     const [title, setTitle] = React.useState('');
     React.useEffect(() => {
         setTimeout(() => {
-            setTitle('doadowkdoawdjwjdiwjdwijdiwjdiwjdiwjdiwopopoqwjqowdjieqeqhfuqwijdiwq');
-        }, 1000);
+            setTitle('Example Ne');
+        }, 250);
     }, []);
     return (
         <div>
