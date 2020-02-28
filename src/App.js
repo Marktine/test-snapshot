@@ -1,31 +1,32 @@
 import React from 'react';
 import logo from './logo.svg';
+import {
+    Link,
+    Route,
+    Switch,
+    BrowserRouter as Router,
+} from 'react-router-dom';
 import Helmet from 'react-helmet';
 import './App.css';
 
+// import components 
+import Home from './Home';
+import Example from './Example';
+
 function App() {
   return ( 
-    <div className="App">
-      <Helmet>
-          <meta charSet="utf-8" />
-          <title>My Title</title>
-          <link rel="canonical" href="http://mysite.com/example" />
-      </Helmet>   
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+      <Router>
+          <div className="App">
+              <Switch>
+                <Route exact path="/" component={Home} />
+                <Route exact path="/example" component={Example} />
+              </Switch>
+              <div>
+                  <Link to="/">To Home</Link>
+                  <Link to="/example">To Example</Link>
+              </div>
+          </div>
+      </Router>
   );
 }
 
